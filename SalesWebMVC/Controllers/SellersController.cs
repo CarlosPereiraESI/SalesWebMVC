@@ -99,7 +99,9 @@ namespace SalesWebMVC.Controllers
 		{
 			if (!ModelState.IsValid)
 			{
-				return View(seller);
+				var departments = _departmentService.FindAll();
+				SellerFormViewModel viewModel = new SellerFormViewModel { Seller = seller, Departments = departments };
+				return View(viewModel);
 			}
 			if (id != seller.Id)
 			{

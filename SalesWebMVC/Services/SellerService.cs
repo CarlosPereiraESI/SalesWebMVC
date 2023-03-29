@@ -4,6 +4,7 @@ using SalesWebMVC.Models;
 using SalesWebMVC.Services.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SalesWebMVC.Services
 {
@@ -16,9 +17,9 @@ namespace SalesWebMVC.Services
 			_context = context;
 		}
 
-		public List<Seller> FindAll()
+		public async Task<List<Seller>> FindAllAsync()
 		{
-			return _context.Seller.ToList();
+			return await _context.Seller.ToListAsync();
 		}
 
 		public void Insert(Seller obj)
