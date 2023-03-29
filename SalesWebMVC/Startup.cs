@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SalesWebMVC.Data;
+using SalesWebMVC.Services;
 
 namespace SalesWebMVC
 {
@@ -26,6 +27,8 @@ namespace SalesWebMVC
                 options.UseMySQL(Configuration.GetConnectionString("SalesWebMVCContext")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
