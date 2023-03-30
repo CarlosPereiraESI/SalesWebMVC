@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SalesWebMvc.Services;
 using SalesWebMVC.Data;
 using SalesWebMVC.Services;
 using System.Collections.Generic;
